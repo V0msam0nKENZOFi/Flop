@@ -8,7 +8,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Настройки" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" Margin="0,0,0,20"/>
+        <TextBlock Text="Настройки" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <WrapPanel Orientation="Horizontal" Margin="-8">
