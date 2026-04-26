@@ -1,0 +1,51 @@
+<Page x:Class="AuthApp.Pages.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="{DynamicResource BackgroundBrush}">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Настройки" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" Margin="0,0,0,20"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <WrapPanel Orientation="Horizontal" Margin="-8">
+                <!-- Блок темы -->
+                <Border Background="{DynamicResource SurfaceBrush}" Padding="15" CornerRadius="8" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" 
+                        Width="300" Margin="8" VerticalAlignment="Top">
+                    <StackPanel>
+                        <TextBlock Text="Тема оформления" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource TextBrush}" Margin="0,0,0,10"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Тёмная" Width="90" Margin="0,0,10,0" Click="SetDarkTheme_Click"/>
+                            <Button Content="Светлая" Width="90" Click="SetLightTheme_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Блок папки загрузок -->
+                <Border Background="{DynamicResource SurfaceBrush}" Padding="15" CornerRadius="8" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" 
+                        Width="300" Margin="8" VerticalAlignment="Top">
+                    <StackPanel>
+                        <TextBlock Text="Папка для скачивания" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource TextBrush}" Margin="0,0,0,10"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock x:Name="DownloadFolderText" Text="{Binding DownloadFolder, RelativeSource={RelativeSource AncestorType=Page}}" 
+                                       Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" TextWrapping="Wrap" MaxWidth="150"/>
+                            <Button Content="Выбрать папку" Click="SelectDownloadFolder_Click" Width="110"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Информация о пользователе -->
+                <Border Background="{DynamicResource SurfaceBrush}" Padding="15" CornerRadius="8" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" 
+                        Width="300" Margin="8" VerticalAlignment="Top">
+                    <StackPanel>
+                        <TextBlock Text="Информация о пользователе" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource TextBrush}" Margin="0,0,0,10"/>
+                        <TextBlock x:Name="UserInfo" Foreground="{DynamicResource TextSecondaryBrush}" FontSize="14"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

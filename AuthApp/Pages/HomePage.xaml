@@ -1,0 +1,12 @@
+<Page x:Class="AuthApp.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="{DynamicResource BackgroundBrush}">
+    <Grid Margin="20">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.Foreground="{DynamicResource TextBrush}">
+            <TextBlock Text="Добро пожаловать!" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" Margin="0,0,0,10"/>
+            <TextBlock x:Name="RoleText" Text="Роль: " FontSize="18" Margin="0,0,0,5"/>
+            <TextBlock Text="Здесь может быть ваше содержимое." FontSize="14" Foreground="{DynamicResource TextSecondaryBrush}" TextWrapping="Wrap" TextAlignment="Center" Width="400"/>
+        </StackPanel>
+    </Grid>
+</Page>
