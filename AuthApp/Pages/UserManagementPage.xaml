@@ -5,51 +5,59 @@
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Управление пользователями" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" Margin="0,0,0,20"/>
+        <TextBlock Text="Управление пользователями" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" 
+                   HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-        <!-- Форма добавления -->
-        <Border Grid.Row="0" Background="{DynamicResource SurfaceBrush}" Padding="15" CornerRadius="8" Margin="0,0,0,15">
+        <!-- Форма добавления пользователя (компактная) -->
+        <Border Grid.Row="1" Background="{DynamicResource SurfaceBrush}" Padding="12" CornerRadius="8" Margin="0,0,0,15">
             <StackPanel>
-                <TextBlock Text="Добавить нового пользователя" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                <TextBlock Text="Добавить нового пользователя" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,8"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="NewLoginBox" Grid.Column="0" Margin="0,0,10,0" Tag="Логин" Foreground="{DynamicResource TextBrush}" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}"/>
-                    <PasswordBox x:Name="NewPasswordBox" Grid.Column="1" Margin="0,0,10,0" Foreground="{DynamicResource TextBrush}" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}"/>
-                    <ComboBox x:Name="RoleCombo" Grid.Column="2" Width="100" Margin="0,0,10,0" SelectedIndex="0"
-                              Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}"/>
-                    <Button Content="Создать" Grid.Column="3" Click="CreateUser_Click" Width="100"/>
+                    <TextBox x:Name="NewLoginBox" Grid.Column="0" Margin="0,0,8,0" Tag="Логин" 
+                             Foreground="{DynamicResource TextBrush}" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" Height="30"/>
+                    <PasswordBox x:Name="NewPasswordBox" Grid.Column="1" Margin="0,0,8,0" 
+                                 Foreground="{DynamicResource TextBrush}" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" Height="30"/>
+                    <ComboBox x:Name="RoleCombo" Grid.Column="2" Width="90" Margin="0,0,8,0" SelectedIndex="0"
+                              Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource TextBrush}" BorderBrush="{DynamicResource BorderBrush}" Height="30"/>
+                    <Button Content="➕ Создать" Grid.Column="3" Click="CreateUser_Click" Width="90" Height="30" Padding="0"/>
                 </Grid>
-                <TextBlock x:Name="CreateErrorText" Foreground="Red" Margin="0,5,0,0" Visibility="Collapsed"/>
+                <TextBlock x:Name="CreateErrorText" Foreground="Red" Margin="0,5,0,0" Visibility="Collapsed" FontSize="12"/>
             </StackPanel>
         </Border>
 
-        <!-- Список пользователей -->
-        <Border Grid.Row="1" Background="{DynamicResource SurfaceBrush}" Padding="15" CornerRadius="8">
+        <!-- Список пользователей (компактный) -->
+        <Border Grid.Row="2" Background="{DynamicResource SurfaceBrush}" Padding="12" CornerRadius="8">
             <StackPanel>
-                <TextBlock Text="Существующие пользователи" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
-                <ListBox x:Name="UsersListBox" Height="300" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}">
+                <TextBlock Text="Существующие пользователи" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                <ListBox x:Name="UsersListBox" Height="300" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" 
+                         ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1" Padding="5">
+                            <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1" Padding="4">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="160"/>
-                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="140"/>
                                         <ColumnDefinition Width="100"/>
-                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="70"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="{Binding Login}" Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" FontSize="14"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Role}" Foreground="{DynamicResource PrimaryBrush}" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
-                                    <Button Grid.Column="2" Content="Редактировать" Width="90" Margin="5,0" Click="EditUser_Click" Tag="{Binding Login}"/>
-                                    <Button Grid.Column="3" Content="Удалить" Width="70" Click="DeleteUser_Click" Tag="{Binding Login}"/>
+                                    <TextBlock Text="{Binding Login}" Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Role}" Foreground="{DynamicResource PrimaryBrush}" VerticalAlignment="Center" FontWeight="Bold" FontSize="13"/>
+                                    <Button Grid.Column="2" Content="✏️ Редактировать" Width="90" Margin="4,0" Click="EditUser_Click" Tag="{Binding Login}" 
+                                            Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="{DynamicResource SurfaceBrush}" 
+                                            Foreground="{DynamicResource TextBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" FontSize="11"/>
+                                    <Button Grid.Column="3" Content="🗑️" Width="50" Margin="4,0" Click="DeleteUser_Click" Tag="{Binding Login}"
+                                            Background="{DynamicResource PrimaryBrush}" Foreground="White" BorderThickness="0" FontSize="12"/>
                                 </Grid>
                             </Border>
                         </DataTemplate>

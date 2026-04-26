@@ -14,7 +14,7 @@
             <Border Grid.Row="0" Background="{DynamicResource SurfaceBrush}" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderBrush}">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="15,0">
                     <Button x:Name="MenuButton" Content="☰" Width="40" Height="40" FontSize="20" Padding="0" Click="MenuButton_Click"/>
-                    <TextBlock Text="AuthApp" FontSize="18" Foreground="{DynamicResource PrimaryBrush}" VerticalAlignment="Center" Margin="15,0,0,0" FontWeight="Bold"/>
+                    <TextBlock Text="Flop" FontSize="18" Foreground="{DynamicResource PrimaryBrush}" VerticalAlignment="Center" Margin="15,0,0,0" FontWeight="Bold"/>
                 </StackPanel>
             </Border>
 

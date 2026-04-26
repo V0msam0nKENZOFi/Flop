@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Приложения" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" Margin="0,0,0,15"/>
+        <TextBlock Text="Приложения" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" HorizontalAlignment="Center" Margin="0,0,0,15"/>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10" x:Name="AdminPanel" Visibility="Collapsed">
             <Button Content="➕ Добавить приложение" Click="AddApp_Click" Margin="0,0,10,0" Padding="10,5"/>
