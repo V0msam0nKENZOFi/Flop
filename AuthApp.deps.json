@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "AuthApp/1.0.34": {
+        "dependencies": {
+          "AuthApp.Shared": "1.0.0"
+        },
+        "runtime": {
+          "AuthApp.dll": {}
+        }
+      },
+      "AuthApp.Shared/1.0.0": {
+        "runtime": {
+          "AuthApp.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AuthApp/1.0.34": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AuthApp.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
